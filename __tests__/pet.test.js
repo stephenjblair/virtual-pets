@@ -1,6 +1,12 @@
-const {pet} = require("../src");
+const Pet = require("../src/pet");
 
-describe("pet", () => {
+describe('constructor', () => {
+    test('returns an object', () =>  {
+        expect(new Pet('Fido')).toBeInstanceOf(Object);
+    });
+    });
+
+/*describe("pet", () => {
     test("create a new pet object", () => {
         expect(pet("Fido")).toStrictEqual( {name: 'Fido'})
     })
@@ -9,6 +15,5 @@ describe("pet", () => {
     })
     test("create a new pet object", () => {
         expect(pet("Cooper")).toStrictEqual( {name: 'Cooper'})
-    })
-})
+    }) */
 
