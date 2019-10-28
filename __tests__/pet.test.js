@@ -21,16 +21,28 @@ describe('constructor', () => {
     
         expect(pet.age).toEqual(1);
       });
+    test('has a initial hunger of 0', () => {
+        const pet = new Pet('Fido');
+    
+        expect(pet.hunger).toEqual(0);
+      });
+    test('has a initial fitness of 10', () => {
+        const pet = new Pet('Fido');
+    
+        expect(pet.fitness).toEqual(10);
+      });  
+    test('growUp method increases hunger by 5', () => {
+        const pet = new Pet('Fido');
+    
+        pet.growUp();
+    
+        expect(pet.hunger).toEqual(5);
+      });    
+    test('growUp method decreases fitness by 3', () => {
+        const pet = new Pet('Fido');
+    
+        pet.growUp();
+    
+        expect(pet.fitness).toEqual(7);
+      });         
     });
-
-/*describe("pet", () => {
-    test("create a new pet object", () => {
-        expect(pet("Fido")).toStrictEqual( {name: 'Fido'})
-    })
-    test("create a new pet object", () => {
-        expect(pet("Benji")).toStrictEqual( {name: 'Benji'})
-    })
-    test("create a new pet object", () => {
-        expect(pet("Cooper")).toStrictEqual( {name: 'Cooper'})
-    }) */
-
