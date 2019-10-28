@@ -1,9 +1,11 @@
 const MAXIMUM_FITNESS = 10;
+const MINIMUM_AGE = 0;
+const MINIMUM_HUNGER = 0;
 
 function Pet(name) {
     this.name = name;
-    this.age = 0;
-    this.hunger = 0;
+    this.age = MINIMUM_AGE;
+    this.hunger = MINIMUM_HUNGER;
     this.fitness = 10;
 
 Pet.prototype.growUp = function() {
