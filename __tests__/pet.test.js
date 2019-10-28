@@ -52,5 +52,13 @@ describe('constructor', () => {
         pet.walk();
     
         expect(pet.fitness).toEqual(10);
-      });       
+      });   
+    test('decreases hunger by 3', () => {
+        const pet = new Pet('fido');
+    
+        pet.hunger = 8;
+        pet.feed();
+    
+        expect(pet.hunger).toEqual(5);
+      });            
     });

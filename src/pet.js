@@ -13,6 +13,14 @@ Pet.prototype.growUp = function() {
     this.hunger += 5;
     this.fitness -= 3;
     };
+    
+Pet.prototype.feed = function() {
+    if(this.feed) {
+        this.hunger -= 3;
+    } else {
+        this.hunger = MINIMUM_HUNGER;
+    }
+}
 
 Pet.prototype.walk = function() {
     if ((this.fitness + 4) <= MAXIMUM_FITNESS ) {
