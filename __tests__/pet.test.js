@@ -68,5 +68,15 @@ describe('constructor', () => {
         pet.fitness = 2;
     
         expect(pet.checkUp()).toBe("I need a walk");
-      });             
+      }); 
+         
+    test('tells us whether or not the pet is alive', () => {
+        const pet = new Pet('fido');
+    
+        pet.fitness = 0;
+        pet.hunger  = 10;
+        pet.age = 0;
+
+        expect(pet.isAlive()).toEqual(false);
+      });              
     });

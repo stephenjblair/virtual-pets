@@ -40,6 +40,9 @@ Pet.prototype.checkUp = function() {
         "I feel great";
     }
 }
+Pet.prototype.isAlive = function() {
+    return this.age < 30 && this.hunger < 10 && this.fitness > 0;
+}
 }
 
 module.exports = Pet;
