@@ -60,5 +60,13 @@ describe('constructor', () => {
         pet.feed();
     
         expect(pet.hunger).toEqual(5);
-      });            
+      });  
+
+    test('notifies me when fitness is less than 3', () => {
+        const pet = new Pet('fido');
+    
+        pet.fitness = 2;
+    
+        expect(pet.checkUp()).toBe("I need a walk");
+      });             
     });
