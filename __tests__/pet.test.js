@@ -45,7 +45,7 @@ describe('constructor', () => {
     
         expect(pet.fitness).toEqual(7);
       });  
-    test('increases fitness by to a maximum of 10', () => {
+    test('walk method increases fitness by 4 to a maximum of 10', () => {
         const pet = new Pet('fido');
     
         pet.fitness = 8;
@@ -53,7 +53,17 @@ describe('constructor', () => {
     
         expect(pet.fitness).toEqual(10);
       });   
-    test('decreases hunger by 3', () => {
+    
+      test('walk method increases fitness by 4 to a maximum of 10', () => {
+        const pet = new Pet('fido');
+    
+        pet.fitness = 5;
+        pet.walk();
+    
+        expect(pet.fitness).toEqual(9);
+      }); 
+
+    test('feed method decreases hunger by 3', () => {
         const pet = new Pet('fido');
     
         pet.hunger = 8;
@@ -69,14 +79,21 @@ describe('constructor', () => {
     
         expect(pet.checkUp()).toBe("I need a walk");
       }); 
-         
-    test('tells us whether or not the pet is alive', () => {
-        const pet = new Pet('fido');
-    
-        pet.fitness = 0;
-        pet.hunger  = 10;
-        pet.age = 0;
 
-        expect(pet.isAlive()).toEqual(false);
-      });              
+    test('throws an error if the pet is not alive', () => {
+        const pet = new Pet('fido');
+  
+        pet.age = 30;
+    
+  
+        expect(() => pet.feed()).toThrow('Your pet is no longer alive :(');
+      });    
+    test('throws an error if the pet is not alive', () => {
+        const pet = new Pet('fido');
+  
+        pet.hunger = 11 ;
+    
+  
+        expect(() => pet.growUp()).toThrow('Your pet is no longer alive :(');
+      });       
     });
